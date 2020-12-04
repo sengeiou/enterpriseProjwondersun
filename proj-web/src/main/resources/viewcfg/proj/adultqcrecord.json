@@ -1,0 +1,367 @@
+{
+  "ID": {
+    "title": "唯一标识",
+    "visible": {},
+    "required": {},
+    "readonly": {}
+  },
+  "BATCHCODE": {
+    "title": "批次",
+    "visible": {
+      "list": true,
+      "query": true,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 120
+    }
+  },
+  "MATERIALSKU": {
+    "title": "产品代码",
+    "visible": {
+      "list": true,
+      "query": true,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 110
+    }
+  },
+  "MATERIALNAME": {
+    "title": "产品名称",
+    "visible": {
+      "list": true,
+      "query": true,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 240
+    }
+  },
+  "PRODUCTSTANDARD": {
+    "title": "产品标准",
+    "visible": {
+      "list": true
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 120
+    }
+  },
+  "PRODUCTSTANDARDPDF": {
+    "title": "产品标准",
+    "visible": {
+      "list": true
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 110
+    }
+  },
+  "INSTOCKQTYMAX": {
+    "title": "最大包装数",
+    "visible": {
+      "list": false,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 240
+    }
+  },
+  "INSTOCKQTYPCS4SP": {
+    "title": "单品数（软促）",
+    "visible": {
+      "list": false,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 100
+    }
+  },
+  "FILEUPLOADSTATUS": {
+    "title": "上传状态",
+    "visible": {
+      "list": false,
+      "query": true,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 240
+    }
+  },
+  "FILEUPLOADSTATUSNAME": {
+    "title": "上传状态",
+    "visible": {
+      "list": true,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 110
+    }
+  },
+  "MIIUPLOADTIME": {
+    "title": "上传工信部时间（软促）",
+    "visible": {
+      "list": false,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 160
+    }
+  },
+  "FILEUPLOADSTATUS4ONE": {
+    "title": "上传状态（一所）",
+    "visible": {
+      "list": false,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 240
+    }
+  },
+  "INSTOCKQTYPCS4ONE": {
+    "title": "单品数（一所）",
+    "visible": {
+      "list": false,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 100
+    }
+  },
+  "FILEUPLOADSTATUS4ONENAME": {
+    "title": "上传状态（一所）",
+    "visible": {
+      "list": false,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 110
+    }
+  },
+  "MIIUPLOADTIME4ONE": {
+    "title": "上传工信部时间（一所）",
+    "visible": {
+      "list": false,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 160
+    }
+  },
+  "PRODINSPECTIONREPORT": {
+    "title": "产品检验报告",
+    "visible": {
+      "list": true,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 110
+    }
+  },
+  "CONFORMITYCERTIFICATE": {
+    "title": "主要原料合格证明",
+    "visible": {
+      "list": true,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 110
+    }
+  },
+  "ATTR1": {
+    "title": "主要原料来源地",
+    "visible": {
+      "list": true,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 180
+    }
+  },
+  "ADDTIME": {
+    "title": "添加时间",
+    "visible": {
+      "list": true
+    },
+    "width": {
+      "list": 160
+    }
+  },
+  "ADDBY": {
+    "title": "添加人",
+    "visible": {
+      "list": true
+    },
+    "width": {
+      "list": 160
+    }
+  },
+  "SUBMITBY": {
+    "title": "上传人",
+    "visible": {
+      "list": true
+    },
+    "width": {
+      "list": 160
+    }
+  },
+  "UPLOADLOCALTIME": {
+    "title": "本地上传时间",
+    "visible": {
+      "list": true,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 160
+    }
+  },
+  "CONCERTUPLOADLOCALTIME": {
+    "title": "主要原料合格证明上传时间",
+    "visible": {
+      "list": false,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 240
+    }
+  },
+  "QCSTATUS": {
+    "title": "质检状态",
+    "visible": {
+      "list": false,
+      "query": false,
+      "add": false,
+      "edit": false,
+      "detail": false
+    },
+    "required": {
+    },
+    "readonly": {
+    },
+    "width": {
+      "list": 240
+    }
+  }
+}

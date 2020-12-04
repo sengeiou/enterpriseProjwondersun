@@ -1,0 +1,8 @@
+[submodule "proj-web/src/main/webapp/WEB-INF/static/basestatic"]
+	path = proj-web/src/main/webapp/WEB-INF/static/basestatic
+	url = http://10.1.4.242/base/basestatic.git
+	branch = master
+[submodule "proj-web/src/main/webapp/WEB-INF/static/easyui"]
+	path = proj-web/src/main/webapp/WEB-INF/static/easyui
+	url = http://10.1.4.242/third-party/easyui.git
+	branch = master

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>proj</artifactId>
+        <groupId>com.proj</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>proj-web-core</artifactId>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.proj</groupId>
+            <artifactId>proj-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ebp</groupId>
+            <artifactId>ebp-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ebp</groupId>
+            <artifactId>ebp-web-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ebd</groupId>
+            <artifactId>ebd-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ebu</groupId>
+            <artifactId>ebu-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ebc</groupId>
+            <artifactId>ebc-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ebt</groupId>
+            <artifactId>ebt-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ebms</groupId>
+            <artifactId>ebms-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ekms</groupId>
+            <artifactId>ekms-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.emes</groupId>
+            <artifactId>emes-core</artifactId>
+        </dependency>
+    </dependencies>
+</project>

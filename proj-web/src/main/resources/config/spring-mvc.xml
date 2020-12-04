@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+       <context:component-scan base-package="com.ehsure" use-default-filters="false">
+              <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+              <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+       </context:component-scan>
+       <!-- 开启AOP监听 只对当前配置文件有效 -->
+       <aop:aspectj-autoproxy expose-proxy="true"/>
+       <!-- 默认页面为login页面 -->
+       <mvc:view-controller path="/" view-name="redirect:/"/>
+       <mvc:default-servlet-handler/>
+       <!-- 静态资源映射 -->
+       <mvc:resources mapping="/static/**" location="/WEB-INF/static/"/>
+       <mvc:annotation-driven>
+              <mvc:message-converters>
+                     <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                            <property name="objectMapper">
+                                   <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+                                          <property name="dateFormat">
+                                                 <bean class="java.text.SimpleDateFormat">
+                                                        <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"/>
+                                                 </bean>
+                                          </property>
+                                   </bean>
+                            </property>
+                     </bean>
+                     <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                            <property name="supportedMediaTypes">
+                                   <list>
+                                          <value>text/plain;charset=UTF-8</value>
+                                          <value>text/html;charset=UTF-8</value>
+                                   </list>
+                            </property>
+                     </bean>
+              </mvc:message-converters>
+       </mvc:annotation-driven>
+		<!-- ViewResolver For JSP -->
+       <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+              <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+              <property name="prefix" value="/WEB-INF/views/"/>
+              <property name="suffix" value=".jsp"/>
+       </bean>
+       <bean id="multipartResolver"
+             class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+              <!--Set the maximum allowed size (in bytes) before uploads are refused.-->
+              <!-- -1 indicates no limit (the default).-->
+              <property name="maxUploadSize" value="50000000"/>
+       </bean>
+
+       <mvc:interceptors>
+              <!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 -->
+              <mvc:interceptor>
+                     <mvc:mapping path="/openapi/proj/billsync/**"/>
+                     <mvc:mapping path="/openapi/proj/codeinfo/queryintegralstate/**"/>
+                     <!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 -->
+                     <bean class="com.arlen.ebp.web.openapi.AuthOpenApiIntercepter"/>
+              </mvc:interceptor>
+       </mvc:interceptors>
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		" default-lazy-init="true">
+    <!-- 重定义接口实现 -->
+    <!--<bean id="organizationAppServiceImpl" class="ProjOrganizationAppServiceImpl"/>-->
+    <bean id="billProcessor" class="com.proj.biz.ProjBillProcessor"/>
+    <bean id="billServiceImpl" class="com.proj.service.impl.OverrideBillServiceImpl"/>
+    <bean id="billHeaderAppServiceImpl" class="com.proj.appservice.impl.ProjBillHeaderAppServiceImpl"/>
+    <bean id="STBillServiceImpl" class="com.proj.service.impl.ProjSTBillServiceImpl"/>
+    <bean id="billBizAppServiceImpl" class="com.proj.appservice.impl.ProjBillBizAppServiceImpl"/>
+</beans>

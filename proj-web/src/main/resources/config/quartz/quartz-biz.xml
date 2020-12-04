@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="billQueueManager" class="com.arlen.ebt.billqueue.BillQueueManager" >
+		<property name="handlers">
+			<util:map>
+				<entry key="bill">
+					<bean class="com.arlen.ebt.billqueue.BillBizHandler" />
+				</entry>
+				<entry key="receiveBill">
+					<bean class="com.arlen.ebt.billqueue.BillReceivedHandler" />
+				</entry>
+				<entry key="st_preprocess">
+					<bean class="com.arlen.ebt.billqueue.STBillPreprocessHandler" />
+				</entry>
+				<entry key="st_process">
+					<bean class="com.arlen.ebt.billqueue.STBillProcessHandler" />
+				</entry>
+			</util:map>
+		</property>
+
+	</bean>
+	<bean id="billPushQueueManager" class="com.arlen.ebt.billqueue.BillPushQueueManager">
+		<property name="handlers">
+			<util:map>
+				<entry key="push_default">
+					<bean class="com.proj.billpush.billPushToEbmsHandler"/>
+				</entry>
+			</util:map>
+		</property>
+	</bean>
+    <bean id="failedCodeRecordEmailJob" class="com.arlen.ebc.job.FailedCodeRecordEmailJob"/>
+    <bean id="syncCodeJob" class="com.proj.job.SyncCodeJob"/>
+    <bean id="syncMaterialJob" class="com.proj.job.SyncMaterialJob"/>
+    <bean id="syncSeriesJob" class="com.proj.job.SyncSeriesJob"/>
+	<bean id="ProductionCodeImportJob" class="com.arlen.ebc.job.ProductionCodeImportJob"/>
+	<bean id="NewMIISingleProdJobBean" class="com.arlen.ebc.job.NewMIISingleProdJobBean"/>
+	<bean id="NewMIIPordVarietyJobBean" class="com.arlen.ebc.job.NewMIIPordVarietyJobBean"/>
+	<bean id="noCodeBillProcessAgainJob" class="com.proj.job.NoCodeBillProcessAgainJob"/>
+	<bean id="resetBillCommandJob" class="com.arlen.ebt.Job.ResetBillCommandJob"/>
+	<bean id="syncMeiChiMaterialJob" class="com.proj.job.SyncMeiChiMaterialJob"/>
+	<bean id="syncGeoCityJob" class="com.proj.job.SyncGeoCityJob"/>
+	<bean id="syncCheckCityJob" class="com.proj.job.SyncCheckCityJob"/>
+	<bean id="MIISingleProdJobBean" class="com.arlen.ebc.job.MIISingleProdJobBean"/>
+	<bean id="MIIPordVarietyJobBean" class="com.arlen.ebc.job.MIIPordVarietyJobBean"/>
+	<!-- 美驰 -->
+	<bean id="pushStoreToMcJob" class="com.proj.job.PushStoreToMcJob"/>
+	<bean id="pushDealerToMcJob" class="com.proj.job.PushDealerToMcJob"/>
+	<bean id="pushDistributorToMcJob" class="com.proj.job.PushDistributorToMcJob"/>
+	<bean id="pushWarehouseToMcJob" class="com.proj.job.PushWarehouseToMcJob"/>
+	<bean id="pushToYSJob" class="com.proj.job.PushToYSJob"/>
+	<!--生产数据处理钉钉提醒Job-->
+	<bean id="productionCodeImportDingRemindJob" class="com.arlen.ebc.job.ProductionCodeImportDingRemindJob"/>
+	<!--单据处理钉钉提醒Job-->
+	<bean id="billQueueManagerDingRemindJob" class="com.arlen.ebt.Job.BillQueueManagerDingRemindJob"/>
+</beans>
